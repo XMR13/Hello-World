@@ -1,0 +1,116 @@
+#include <iostream>
+#include <cmath>
+#include <string>
+#include <cstdlib>
+#include <limits>
+
+double input();
+void Calculate(int angkaPertama, int angkaKedua, char Opera);
+
+void ignoreLine()
+{
+	std::cin.ignore(std::numeric_limits < std::streamsize>::max(), '\n');
+
+}
+
+double input()
+{
+	while (true)
+	{
+		std::cout << "masukkan input anda: ";
+		double angka{};
+		std::cin >> angka;
+		
+		if (std::cin.fail())
+		{
+			std::cin.clear();
+			ignoreLine();
+			std::cout << "input anda tidak valid, ulang kembali\n";
+		}
+
+		else
+			ignoreLine();
+			return angka;
+	}
+	
+
+}
+
+void print (double a, double b, char op)
+{
+	
+	std::cout << a << " " << op << " " << b << " = " << std::endl;
+}
+
+char op()
+{
+	while (true)
+	{
+		std::cout << "pilihlah operator yang anda inginkan, salah saru dari +, -, /, *\n";
+		char op{};
+		std::cin >> op;
+
+		if (std::cin.fail())
+		{
+			std::cin.clear();
+			ignoreLine();
+			std::cout << "input anda tidak valid, ulang kembali\n";
+		}
+
+		else
+		{
+			
+			switch (op)
+			{
+			case '+':
+			case '-':
+			case '*':
+			case '/':
+				return op;
+			default:
+				{
+						ignoreLine();
+						std::cout << "input anda tidak valid, ulang lagi\n";
+						
+				}
+
+			}
+				
+		}
+		
+	}
+
+}
+
+int main()
+{
+	while (true)
+	{
+
+		double a{ input() };
+		char op(op());
+		double b{ input() };
+		print(a, b, op);
+
+		std::cout << "mau melakukan pengulangan? [y/n]\n";
+		char repeat{};
+		std::cin >> repeat;
+		if (repeat == 'y')
+		{
+
+		}
+		else if (repeat == 'n')
+			return 0;
+		else
+		{
+			std::cout << "invalid input, try again!\n";
+			ignoreLine();
+		}
+	}
+	
+	
+	
+	
+	
+
+}
