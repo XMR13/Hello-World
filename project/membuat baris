@@ -1,0 +1,40 @@
+void banyakGaris(int banyak)//print 5 line namun banyaj
+{
+	for (int count = 1; count <= banyak; ++count)
+	{
+		std::cout << "-----";
+		std::cout << "  ";
+	}
+}
+
+void banyakBatang(int batang)
+{
+	for (int count = 1; count <= batang; ++count)
+	{
+		std::cout << "|    |\n";
+	}
+
+}
+
+int kek()
+{
+	
+	std::cout << "---\n";
+	int banyaknyaKotak{};
+	std::cout << "berapa kotak 3* 3 yang anda inginkan?  ";
+	std::cin >> banyaknyaKotak;
+
+	for (int c = 0; c < banyaknyaKotak; ++c)
+	{
+		std::cout << "--------" << std::endl;
+		std::cout << "|      |\n";
+		std::cout << "|      |\n";
+		std::cout << "|      |\n";
+		std::cout << "--------";
+		
+
+	}
+
+	std::cout << "----------";
+	return 1;
+}
