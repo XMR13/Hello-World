@@ -1,3 +1,5 @@
+void banyakGaris(int banyak);
+void banyakBatang(int batang);
 void banyakGaris(int banyak)//print 5 line namun banyaj
 {
 	for (int count = 1; count <= banyak; ++count)
