@@ -1,1 +1,90 @@
+1. Buatlah program yang menghitung jarak bola yang jatuh dari sebuah gedung! (asumsikan bahwa gaya yang bekerja pada bola hanya gaya gravitasi)
+rumus jarak jatuh = gravitasi * waktu^2 /2
 
+#include "io.h"
+#include <iostream>
+#include <cmath>
+#include <limits>
+
+void ignoreLine();
+double askTinggiAwal();
+void calculateheight();
+
+
+int main()
+{
+	calculateheight();
+	
+
+}
+
+void ignoreLine()
+{
+
+	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+}
+
+double askTinggiAwal()
+{
+	while (true)
+	{
+		std::cout << "masukkan tinggi awal gedung tersebut? ";
+		double tinggiAwal{};
+		std::cin >> tinggiAwal;
+
+		if (tinggiAwal < 0.0)
+		{
+			std::cout << "maaf silakan ulang kembali\n";
+
+		}
+
+		else if (tinggiAwal == 0.0)
+		{
+
+			return 0.0;
+		}
+
+		else if (std::cin.fail())
+		{
+
+			std::cin.clear();
+			ignoreLine();
+		}
+		else
+			return tinggiAwal;
+
+
+	}
+}
+
+
+
+
+
+void calculateheight()
+{
+	using constant::gravity;
+	double tinggiAwal = askTinggiAwal();
+	int time{};
+	double tinggiSekarang = tinggiAwal - gravity * ((time * time )/ 2);
+
+	while (tinggiSekarang > 0)
+	{
+
+		std::cout << "tinggi bola dari tanah setelah " << time << " sekon adalah " << tinggiSekarang << std::endl;
+		++time;
+		tinggiSekarang = tinggiAwal - gravity * time * time / 2;
+	}
+
+	if (tinggiSekarang < 0)
+	{
+		std::cout << "selamat anda sudah mencapai tanah\n";
+		
+	}
+	
+
+	
+}
+
+
+2.
