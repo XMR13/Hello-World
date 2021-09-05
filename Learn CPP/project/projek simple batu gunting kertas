@@ -1,0 +1,107 @@
+#include <iostream>
+#include <cassert>
+#include <iomanip>
+#include <limits>
+#include <cstdlib>
+#include <ctime>
+
+
+
+void ignoreLine()
+{
+	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+}
+
+int checkVal()
+{
+	while (true)
+	{
+		int x{};
+		std::cin >> x;
+		switch (x)
+		{
+		case 1:
+		{
+			std::cout << "anda memilih 1 = batu\n ";
+			return x;
+		}
+		case 2:
+		{
+			std::cout << "anda memilih 2 = gunting\n ";
+			return x;
+		}
+		case 3:
+		{
+			std::cout << "anda memilih 3 = kertas\n";
+			return x;
+		}
+
+		default:
+			std::cin.clear();
+			ignoreLine();
+		}
+
+		std::cout << "input tidak valid, coba lagi!\n ";
+	}
+	
+}
+
+int randomGen()
+{
+
+	srand(time(0));
+	return (1 + (rand() % 3));
+
+}
+
+void winOrLose()
+{
+	
+	int x = checkVal();
+	int y = randomGen();
+	std::cout << "musuh anda memilih " << y << '\n';
+
+	if (x == y)
+	{
+		std::cout << "hasilnya draw\n";
+	}
+
+	else if (x == 1 && y == 2)
+	{
+		std::cout << "saya menang\n";
+	}
+	else if (x == 2 && y == 3)
+	{
+		std::cout << "saya menang\n";
+	}
+	else if (x == 3 && y == 1)
+	{
+		std::cout << "saya menang\n";
+	}
+	else if (x == 1 && y == 3)
+	{
+		std::cout << "saya kalah\n";
+	}
+	else if (x == 2 && y == 1)
+	{
+		std::cout << "saya kalah\n";
+	}
+	else if (x == 3 && y == 2)
+	{
+		std::cout << "saya kalah\n";
+	}
+
+}
+
+int main()
+{
+
+	std::cout << "1 untuk batu\n";
+	std::cout << "2 untuk gunting\n";
+	std::cout << "3 untuk kertas\n";
+	winOrLose();
+
+
+
+	return 0;
+}
