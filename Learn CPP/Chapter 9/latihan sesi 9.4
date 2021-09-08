@@ -1,0 +1,54 @@
+1.  Kita menjalankan sebuah website dan ingin melihat berapa banyak uang yang kita dapat per hari melalui iklan. Buatlah sebuah program 
+menggunakan struct yang dapat menampilkan semua hal yang kita inginkan dalam sebuah ad seperti (berapa banyak iklan yang diklik,
+berapa persen iklan yang diklik, dll)
+
+Jawab:
+
+#include <iostream>
+
+struct Iklan
+{
+	int iklan{};
+	double pIklan{};
+	double rataIklan{};
+};
+
+
+void printIklan(Iklan hasilIklan)
+{
+
+	std::cout << "hasil dari iklan adalah: " << hasilIklan.iklan << '\n';
+	std::cout << "persenn dari diklik adalah " << hasilIklan.pIklan << '\n';
+	std::cout << "rata - rata dari iklan adalah " << hasilIklan.rataIklan << '\n';
+}
+
+int calculate(Iklan iklan)
+{
+
+	return (iklan.iklan * iklan.pIklan / 100 * iklan.rataIklan);
+}
+
+int main()
+{
+	Iklan lmfao;
+	std::cout << "masukkan banyak iklan yang diklik ";
+	std::cin >> lmfao.iklan;
+	std::cout << "masukkan banyak persen dari iklan yang diketik ";
+	std::cin >> lmfao.pIklan;
+	std::cout << "masukkan rata - rata iklan yang diklik: ";
+	std::cin >> lmfao.rataIklan;
+
+
+
+	Iklan joeMama{ lmfao.iklan, lmfao.pIklan, lmfao.rataIklan };
+	printIklan(joeMama);
+	std::cout << "total hari ini adalah " << calculate(joeMama);
+
+
+}
+
+2). Create a struct to hold a fraction. The struct should have an integer numerator and an integer denominator member. 
+Declare 2 fraction variables and read them in from the user. Write a function called multiply that takes both fractions, 
+multiplies them together, and returns the result as a decimal number. You do not need to reduce the fraction to its lowest terms. 
+Print the result of the multiplication of the 2 fraction variables.
+
