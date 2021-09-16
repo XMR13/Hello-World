@@ -2,49 +2,48 @@
 menggunakan struct yang dapat menampilkan semua hal yang kita inginkan dalam sebuah ad seperti (berapa banyak iklan yang diklik,
 berapa persen iklan yang diklik, dll)
 
-Jawab:
+#include <iostream >
+#include <string>
 
-#include <iostream>
 
 struct Iklan
 {
-	int iklan{};
-	double pIklan{};
-	double rataIklan{};
+	double BanyakIklan{};
+	double BanyakPersen{};
+	double Ratarata{};
+
+
 };
 
-
-void printIklan(Iklan hasilIklan)
+Iklan GetVal()
 {
+	Iklan UntukNilai;
+	std::cout << "masukkan nilai jumlah iklan untuk hari ini: ";
+	std::cin >> UntukNilai.BanyakIklan;
+	std::cout << "masukkan nilai persentase iklan yang diklik: ";
+	std::cin >> UntukNilai.BanyakPersen;
+	std::cout << "rata - rata iklan hari ini: ";
+	std::cin >> UntukNilai.Ratarata;
 
-	std::cout << "hasil dari iklan adalah: " << hasilIklan.iklan << '\n';
-	std::cout << "persenn dari diklik adalah " << hasilIklan.pIklan << '\n';
-	std::cout << "rata - rata dari iklan adalah " << hasilIklan.rataIklan << '\n';
+	return UntukNilai;
 }
 
-int calculate(Iklan iklan)
+void PrintNilai(Iklan UntukPrint)
 {
 
-	return (iklan.iklan * iklan.pIklan / 100 * iklan.rataIklan);
+	std::cout << "Banyak iklan yang diklik adalah: " << UntukPrint.BanyakIklan << std::endl;
+	std::cout << "Besar persentase iklan yang diklik adalah : " << UntukPrint.BanyakPersen << std::endl;
+	std::cout << "Rata - rata iklan hari ini adalah : " << UntukPrint.Ratarata << std::endl;
+
+	std::cout << "dan total untuk hari itu adalah ";
+	std::cout << (UntukPrint.BanyakIklan * (UntukPrint.BanyakPersen / 100) * UntukPrint.Ratarata);
 }
 
 int main()
 {
-	Iklan lmfao;
-	std::cout << "masukkan banyak iklan yang diklik ";
-	std::cin >> lmfao.iklan;
-	std::cout << "masukkan banyak persen dari iklan yang diketik ";
-	std::cin >> lmfao.pIklan;
-	std::cout << "masukkan rata - rata iklan yang diklik: ";
-	std::cin >> lmfao.rataIklan;
-
-
-
-	Iklan joeMama{ lmfao.iklan, lmfao.pIklan, lmfao.rataIklan };
-	printIklan(joeMama);
-	std::cout << "total hari ini adalah " << calculate(joeMama);
-
-
+	Iklan Total{ GetVal() };
+	PrintNilai(Total);
+	return 0;
 }
 
 2). Create a struct to hold a fraction. The struct should have an integer numerator and an integer denominator member. 
