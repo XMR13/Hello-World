@@ -51,3 +51,44 @@ Declare 2 fraction variables and read them in from the user. Write a function ca
 multiplies them together, and returns the result as a decimal number. You do not need to reduce the fraction to its lowest terms. 
 Print the result of the multiplication of the 2 fraction variables.
 
+Jawab:
+#include <iostream >
+#include <string>
+#include <cstdlib>
+
+
+
+struct pecahan
+{
+	double pembilang{};
+	double penyebut{};
+
+};
+
+pecahan getVal()
+{
+	pecahan val;
+	std::cout << "masukkan besar pembilang ";
+	std::cin >> val.pembilang;
+	std::cout << "masukkan besar penyebut ";
+	std::cin >> val.penyebut;
+	return val;
+}
+
+void Printval(pecahan satu, pecahan dua)
+{
+
+	std::cout << "besar pecahan satu adalah " << (satu.pembilang / satu.penyebut) << '\n';
+	std::cout << "besar pecahan dua adalah " << (dua.pembilang / dua.penyebut) << '\n';
+	std::cout << "maka perkalian mereka adalah: ";
+	std::cout << static_cast<double>((satu.pembilang / satu.penyebut) * dua.pembilang / dua.penyebut) << std::endl;
+
+}
+
+int main()
+{
+	pecahan nilai1{ getVal() };
+	pecahan nilai2{ getVal() };
+	Printval(nilai1, nilai2);
+	
+}
