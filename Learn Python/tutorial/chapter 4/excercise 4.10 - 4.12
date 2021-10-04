@@ -1,0 +1,63 @@
+'''
+4-10. Slices: Using one of the programs you wrote in this chapter, add several
+lines to the end of the program that do the following:
+•
+Print the message The first three items in the list are:. Then use a slice to
+print the first three items from that program’s list.
+•
+Print the message Three items from the middle of the list are:. Use a slice to
+print three items from the middle of the list.
+•
+Print the message The last three items in the list are:. Use a slice to print the
+last three items in the list.
+'''
+alfabet = ['A','B','C','D','E','F','G',"H","I"]
+
+print(f"3 elemen pertama dari alfabet adalah {alfabet[0:3]}")
+print(f'\n3 elemen tengah di list alfabet ialah {alfabet[3:6]}')
+print(f'\n3 elemen terakhir dari list alfabet ialah {alfabet[6:9]}')
+
+'''
+4-11. My Pizzas, Your Pizzas: Start with your program from Exercise 4-1
+(page 56). Make a copy of the list of pizzas, and call it friend_pizzas.
+Then, do the following:
+•
+Add a new pizza to the original list.
+•
+Add a different pizza to the list friend_pizzas.
+•
+Prove that you have two separate lists. Print the message My favorite
+pizzas are:, and then use a for loop to print the first list. Print the message
+My friend’s favorite pizzas are:, and then use a for loop to print the sec-
+ond list. Make sure each new pizza is stored in the appropriate list.
+'''
+mypizza = ['peperoni','macaroni','lololni']
+friend_pizza = mypizza[:]
+
+#nambah 1 pizza mypizza
+mypizza.append("kontoloni")
+#nambah 1 pizza untuk kawan ku
+friend_pizza.append("babiloni")
+
+print("pizza ku adalah ")
+for pizza in mypizza:
+    print(pizza)
+
+print("\npizza kawanku adalah")
+for pizza in friend_pizza:
+    print(pizza)
+
+'''
+4-12. More Loops: All versions of foods.py in this section have avoided using
+for loops when printing to save space. Choose a version of foods.py, and
+write two for loops to print each list of foods.
+'''
+myfood = ['pizza', 'falafel', 'carrot cake', 'cannoli']
+friend_food = myfood[:]
+myfood.append("xixixi")
+friend_food.append("HAHAHA")
+for food in myfood:
+    print(food)
+print('\n')
+for food in friend_food:
+    print(food)
