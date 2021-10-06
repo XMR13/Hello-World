@@ -1,0 +1,70 @@
+'''
+5-1. Conditional Tests: Write a series of conditional tests. Print a statement
+describing each test and your prediction for the results of each test. Your code
+should look something like this:
+car = 'subaru'
+print("Is car == 'subaru'? I predict True.")
+print(car == 'subaru')
+print("\nIs car == 'audi'? I predict False.")
+print(car == 'audi')
+•
+Look closely at your results, and make sure you understand why each line
+evaluates to True or False.
+•
+Create at least ten tests. Have at least five tests evaluate to True and
+another five tests evaluate to False.
+'''
+
+nama = 'Ruslan'
+print('Ruslan' == nama)
+print('rus'==nama)
+print('RUSLAN' == nama.upper())
+print(['R','u','s','l','a','n'] == list(nama))
+print('ruslan' == nama.lower())
+
+'''5-2. More Conditional Tests: You don’t have to limit the number of tests you
+create to ten. If you want to try more comparisons, write more tests and add
+them to conditional_tests.py. Have at least one True and one False result for
+each of the following:
+•
+Tests for equality and inequality with strings
+•
+Tests using the lower() method
+•
+Numerical tests involving equality and inequality, greater than and
+less than, greater than or equal to, and less than or equal to
+•
+Tests using the and keyword and the or keyword
+•
+Test whether an item is in a list
+•
+Test whether an item is not in a list
+'''
+namaku = 'Asep'
+print('Asep' == namaku)
+print('jajang' != namaku)
+
+print('asep' == namaku.lower())
+print(['a','s','e','p'] == list(namaku.lower()))
+print('ASEP' == namaku.upper())
+print('\n')
+print('skip dlu 1 baris')
+
+x = 10
+y = 2
+z = 3
+
+print(x>2,x<2,x!=2)
+print(y <= x, y > z, y != 2)
+print (z == y, z <= -1, z == 3)
+
+print (x < 20 and x > 5, x < 20 and x > 10)
+print ( y == 2 and y != 2, y == 2 or y != 2)
+print (z >= 3 and z < 10)
+
+kokokokkok = "jsijdaajsidajdsiadj"
+letter = [huruf for huruf in kokokokkok ]
+print(letter)
+
+print ('j' in letter)
+print ('dsfdsf' in letter)
