@@ -1,0 +1,69 @@
+import random
+
+'''
+project simple batu, gunting kertas di python
+'''
+
+print('''
+selamat datang di permainan batu, gunting, kertas
+disini akan mencoba untuk mensimulasikan permainan sederhana
+dalam komputer, yakni permainan batu, gunting, dan kertas
+''')
+
+pilihan = ['batu', 'gunting', 'kertas']
+
+def convert(inp:str):
+    if inp.lower() == 'batu':
+        inp = 1
+    elif inp.lower() == 'kertas':
+        inp = 2
+    elif inp.lower() == 'gunting':
+        inp = 3
+    else:
+        print("salah pilih tolol")
+        return 0
+
+    return int(inp)
+
+def checking(player, musuh):
+    winorlose = -1
+    if player == 1 and musuh == 2:
+        winorlose = 0
+    elif player == 1 and musuh == 3:
+        winorlose = 1
+    elif player == 2 and musuh == 1:
+        winorlose = 1
+    elif player == 2 and musuh == 3:
+        winorlose = 0
+    elif player == 3 and musuh == 1:
+        winorlose = 0
+    elif player == 3 and musuh == 2:
+        winorlose == 1
+    elif player == musuh:
+        winorlose = 10
+    else:
+        winorlose == -1
+
+    if winorlose == 1:
+        print('selamat anda menang')
+    elif winorlose == 0:
+        print('wkwkwk tolol, kalah kau kan')
+    elif winorlose == 10:
+        print("hasilnya draw")
+
+
+print("permainan dimulai")
+permainan_mulai = True
+while permainan_mulai:
+    Player = input("masukkan pilihan anda! ")
+    Musuh = random.choice(pilihan)
+    x = convert(Player)
+    y = convert(Musuh)
+    print(f'anda memilih {Player} dan musuh memilih {Musuh}')
+    checking(x, y)
+    nanya = input("\napakah anda ingin bermain lagi [y/n]? ")
+    if nanya == 'y':
+        pass
+    else:
+        permainan_mulai = False
+
