@@ -1,0 +1,46 @@
+#include <iostream>
+#include <string>
+
+class grades
+{
+protected:
+	std::string nama{};
+	float nilai{};
+
+public:
+	void inputData()
+	{
+		std::cout << "masukkan nama\t:";
+		std::cin >> nama;
+		std::cout << "masukkan nilai\t:";
+		std::cin >> nilai;
+	}
+
+	void showData()
+	{
+		std::cout << "namanya\t:" << nama << std::endl;
+		std::cout << "nilainya\t:" << nilai << std::endl;
+
+	}
+
+};
+
+int main()
+{
+	grades rzq[5];
+	int banyakorang = 5;
+	std::cout << "terdapat " << banyakorang << " anggota\n";
+	for (int i = 0; i < banyakorang; i++)
+	{
+		rzq[i].inputData();
+
+	}
+
+	std::cout << "Hasil datanya" << std::endl;
+
+	for (int j = 0; j < banyakorang; j++)
+	{
+		rzq[j].showData();
+	}
+
+}
